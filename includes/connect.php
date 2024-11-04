@@ -4,14 +4,14 @@ require 'vendor/autoload.php';
 use Aws\SecretsManager\SecretsManagerClient;
 use Aws\Exception\AwsException;
 
-$secretName = 'db-credentials';
+//Group 5 - DB credentials secret key name
+$secretName = 'rds-db-credentials';
 $region = 'us-east-1'; 
 
 $client = new SecretsManagerClient([
     'version' => 'latest',
     'region'  => $region,
 ]);
-
 try {
     $result = $client->getSecretValue([
         'SecretId' => $secretName,
@@ -24,7 +24,6 @@ try {
     echo "Error retrieving secret: " . $e->getMessage();
     exit;
 }
-
 $host = $credentials['host'];
 $username = $credentials['username'];
 $password = $credentials['password'];
@@ -35,6 +34,5 @@ $con = new mysqli($host, $username, $password, $dbname);
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
-
 echo "Connected successfully using AWS Secrets Manager!";
 ?>
