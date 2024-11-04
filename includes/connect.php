@@ -1,38 +1,11 @@
-<?php
-require 'vendor/autoload.php';
-
-use Aws\SecretsManager\SecretsManagerClient;
-use Aws\Exception\AwsException;
-
-//Group 5 - DB credentials secret key name
-$secretName = 'rds-db-credentials';
-$region = 'us-east-1'; 
-
-$client = new SecretsManagerClient([
-    'version' => 'latest',
-    'region'  => $region,
-]);
-try {
-    $result = $client->getSecretValue([
-        'SecretId' => $secretName,
-    ]);
-
-    $secret = $result['SecretString'];
-    $credentials = json_decode($secret, true);
-
-} catch (AwsException $e) {
-    echo "Error retrieving secret: " . $e->getMessage();
-    exit;
+<?php 
+// $con=mysqli_connect('localhost','root','','ecommerce_1');
+$con = new mysqli('database-2.c3uicks2o9tx.us-east-1.rds.amazonaws.com','group5_admin','Group5#Admin','ecommerce_1');
+if(!$con){
+    die(mysqli_error($con));
 }
-$host = $credentials['host'];
-$username = $credentials['username'];
-$password = $credentials['password'];
-$dbname = $credentials['dbname'];
 
-$con = new mysqli($host, $username, $password, $dbname);
 
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-}
-echo "Connected successfully using AWS Secrets Manager!";
+
+
 ?>

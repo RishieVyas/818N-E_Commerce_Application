@@ -10,8 +10,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Home Page</title>
-    <link rel="stylesheet" href="https://cloudhost.today/assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="https://cloudhost.today/assets/css/main.css" />
+    <link rel="stylesheet" href="https://d1lsdckrr9k4qc.cloudfront.net/bootstrap.css" />
+    <link rel="stylesheet" href="https://d1lsdckrr9k4qc.cloudfront.net/main.css" />
 </head>
 
 <body>
@@ -361,7 +361,7 @@ session_start();
     </div> -->
     <!-- End Footer -->
 
-    <script src="https://cloudhost.today/assets/js/bootstrap.bundle.js"></script>
+    <script src="https://d1lsdckrr9k4qc.cloudfront.net/bootstrap.bundle.js"></script>
 </body>
 
 </html>
