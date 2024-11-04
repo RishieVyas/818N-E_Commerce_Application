@@ -242,7 +242,7 @@ ul {
 */
 /* Start Landing Section  */
 .landing .container .row .cover {
-    background-image: url("https://d1lsdckrr9k4qc.cloudfront.net/bg.png");
+    background-image: url(../images/bg.png);
     background-size: cover;
     height: 100%;
     display: flex;
@@ -357,7 +357,7 @@ ul {
 }
 
 .adver .container .cover {
-    background-image: url("https://d1lsdckrr9k4qc.cloudfront.net/bgsecond.png");
+    background-image: url(../images/bgsecond.png);
     background-position: center;
     background-size: cover;
     height: 60vh;
